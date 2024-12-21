@@ -1,11 +1,11 @@
-import { createContext } from "react";
+// import { createContext } from "react";
 
-export const Context = createContext();
+// export const Context = createContext();
 
-const DoctorContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const value = {};
+// const DoctorContextProvider = ({ children }: { children: React.ReactNode }) => {
+//   const value = {};
 
-  return <Context.Provider value={value}>{children}</Context.Provider>;
-};
+//   return <Context.Provider value={value}>{children}</Context.Provider>;
+// };
 
-export default DoctorContextProvider;
+// export default DoctorContextProvider;

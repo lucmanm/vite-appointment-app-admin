@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface Appointment {
-  id: number
-  patientName: string
-  age: number
-  dateTime: string
-  doctor: string
-  fees: number
+  id: number;
+  patientName: string;
+  age: number;
+  dateTime: string;
+  doctor: string;
+  fees: number;
 }
 
 const mockAppointments: Appointment[] = [
@@ -18,15 +18,15 @@ const mockAppointments: Appointment[] = [
   { id: 3, patientName: "Bob Brown", age: 42, dateTime: "2023-07-15 02:00 PM", doctor: "Dr. Williams", fees: 200 },
   { id: 4, patientName: "Alice Green", age: 55, dateTime: "2023-07-16 09:30 AM", doctor: "Dr. Davis", fees: 160 },
   { id: 5, patientName: "Charlie Wilson", age: 30, dateTime: "2023-07-16 03:30 PM", doctor: "Dr. Taylor", fees: 190 },
-]
+];
 
 export default function AppointmentsTable() {
-  const [appointments, setAppointments] = useState<Appointment[]>(mockAppointments)
+  const [appointments] = useState<Appointment[]>(mockAppointments);
 
   const handleAction = (id: number) => {
     // This is a placeholder for the action. You can implement the actual logic here.
-    console.log(`Action triggered for appointment ${id}`)
-  }
+    console.log(`Action triggered for appointment ${id}`);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -52,11 +52,7 @@ export default function AppointmentsTable() {
               <td className="py-2 px-4 border-b">{appointment.doctor}</td>
               <td className="py-2 px-4 border-b">${appointment.fees}</td>
               <td className="py-2 px-4 border-b">
-                <Button
-                  onClick={() => handleAction(appointment.id)}
-                  variant="outline"
-                  size="sm"
-                >
+                <Button onClick={() => handleAction(appointment.id)} variant="outline" size="sm">
                   View Details
                 </Button>
               </td>
@@ -65,6 +61,5 @@ export default function AppointmentsTable() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
-
