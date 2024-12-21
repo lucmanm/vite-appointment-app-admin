@@ -14,6 +14,8 @@ export default function DoctorInfoForm() {
       setPhoto(event.target.files[0]);
     }
   };
+  console.log(photo);
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -28,14 +30,14 @@ export default function DoctorInfoForm() {
         <div className="space-y-4">
           <div className="md:col-span-2 flex items-center gap-4">
             <img
-              src={assets.upload_icon}
-              className="size-24 border-2 rounded-full bg-slate-300 p-4"
+              src={photo ? URL.createObjectURL(photo) : assets.upload_icon}
+              className="size-24 border rounded-full bg-slate-300 object-cover border-slate-500"
               alt ="profile photo"
               height={50}
               width={50}
             />
             <div>
-              <Label htmlFor="photo">Photo of Doctor</Label>
+              {/* <Label htmlFor="photo">Photo of Doctor</Label> */}
               <Input id="photo" type="file" accept="image/*" onChange={handlePhotoChange} />
             </div>
           </div>

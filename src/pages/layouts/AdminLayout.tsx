@@ -9,7 +9,7 @@ const AdminLayout = () => {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <Header/>
+        <Header />
         <Outlet />
       </SidebarInset>
     </SidebarProvider>

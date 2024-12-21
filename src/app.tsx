@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import AdminLayout from "./pages/layouts/AdminLayout";
 import AuthLayout from "./pages/layouts/AuthLayout";
 import RootLayout from "./pages/layouts/RootLayout";
+import DoctorFormPage from "./pages/DoctorFormPage";
+import AppointmentsPage from "./pages/AppointmentsPage";
 
 const App = () => {
   return (
@@ -11,6 +13,10 @@ const App = () => {
       <Route element={<RootLayout />}>
         <Route path="admin" element={<AdminLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="appointments" element={<AppointmentsPage />} />
+          <Route path="add-doctor" element={<DoctorFormPage />} />
+          <Route path="profile" element={<DoctorFormPage />} />
+          <Route path="doctor-lists" element={<DoctorFormPage />} />
         </Route>
       </Route>
       {/* auth Layout */}
