@@ -10,7 +10,10 @@ const AdminLayout = () => {
       <AppSidebar />
       <SidebarInset>
         <Header />
+        <section className="md:p-4">
+
         <Outlet />
+        </section>
       </SidebarInset>
     </SidebarProvider>
   );

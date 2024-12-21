@@ -1,10 +1,11 @@
+import AppointmentsTable from "@/components/apointment-table";
 
-const AppointmentsPage = () => {
+export default function AppointmentsPage() {
   return (
-    <div>
-      AppointmentsPage
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Appointments</h1>
+      <AppointmentsTable />
     </div>
   )
 }
 
-export default AppointmentsPage

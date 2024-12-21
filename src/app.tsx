@@ -6,6 +6,8 @@ import AuthLayout from "./pages/layouts/AuthLayout";
 import RootLayout from "./pages/layouts/RootLayout";
 import DoctorFormPage from "./pages/DoctorFormPage";
 import AppointmentsPage from "./pages/AppointmentsPage";
+import DoctorsPage from "./pages/DoctorsPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (
@@ -15,8 +17,8 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="appointments" element={<AppointmentsPage />} />
           <Route path="add-doctor" element={<DoctorFormPage />} />
-          <Route path="profile" element={<DoctorFormPage />} />
-          <Route path="doctor-lists" element={<DoctorFormPage />} />
+          <Route path="doctor-lists" element={<DoctorsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Route>
       {/* auth Layout */}

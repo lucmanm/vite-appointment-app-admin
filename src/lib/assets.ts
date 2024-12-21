@@ -36,8 +36,42 @@ import profile_pic from '@/assets/images/profile_pic.png'
 import razorpay_logo from '@/assets/images/razorpay_logo.png'
 import stripe_logo from '@/assets/images/stripe_logo.png'
 import upload_icon from '@/assets/images/upload_icon.png'
+import { Calendar, LayoutDashboard, User, UserPlus, Users } from 'lucide-react'
 
 export const defaultIamge = "https://res.cloudinary.com/dzdcszrob/image/upload/v1721465707/playground-images/icons/q2dwvixku4oxmgjer5gd.svg"
+
+export const navItems = [
+    {
+      icon: LayoutDashboard,
+      label: "Dashboard",
+      href: "",
+      description: "the main index for your data",
+    },
+    {
+      icon: Calendar,
+      label: "Appointments",
+      description: "Schedule or view appointments",
+      href: "appointments",
+    },
+    {
+      icon: UserPlus,
+      label: "Add Doctor",
+      description: "Add a new doctor to the system",
+      href: "add-doctor",
+    },
+    {
+      icon: Users,
+      label: "Doctor Lists",
+      description: "View and manage doctors",
+      href: "doctor-lists",
+    },
+    {
+      icon: User,
+      label: "Profile",
+      description: "Manage your profile",
+      href: "profile",
+    },
+  ];
 
 export const assets = {
     appointment_img,
