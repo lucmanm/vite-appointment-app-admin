@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, GalleryVerticalEnd, LayoutDashboard, LayoutGridIcon, User, UserPlus, Users } from "lucide-react";
+import { Calendar, GalleryVerticalEnd, LayoutDashboard, User, UserPlus, Users } from "lucide-react";
 
 import {
   Sidebar,
@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "" },
@@ -22,7 +22,7 @@ const navItems = [
 ];
 
 export function AppSidebar() {
-  const pathname = useLocation().pathname.split("/").pop()
+  const pathname = useLocation().pathname.split("/").pop();
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
@@ -45,8 +45,11 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarMenu>
           {navItems.map((item) => (
-            <SidebarMenuItem key={item.href}>
-              <SidebarMenuButton asChild tooltip={item.label} className={`${pathname === item.href && "border-r-4 border-r-slate-950"}  font-semibold rounded-none`}>
+            <SidebarMenuItem
+              key={item.href}
+              className={`${pathname === item.href && "border-r-4 border-r-slate-950"}  font-semibold rounded-none content-center flex justify-center`}
+            >
+              <SidebarMenuButton asChild tooltip={item.label} className={`${pathname === item.href && "-mr-4"}`}>
                 <Link to={`/admin/${item.href}`}>
                   <item.icon className="size-4" />
                   <span>{item.label}</span>
