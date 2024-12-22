@@ -16,7 +16,6 @@ export default function DoctorInfoForm() {
   };
   console.log(photo);
 
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission here
@@ -32,7 +31,7 @@ export default function DoctorInfoForm() {
             <img
               src={photo ? URL.createObjectURL(photo) : assets.upload_icon}
               className="size-24 border rounded-full bg-slate-300 object-cover border-slate-500"
-              alt ="profile photo"
+              alt="profile photo"
               height={50}
               width={50}
             />
