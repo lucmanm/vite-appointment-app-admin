@@ -8,8 +8,6 @@ const AuthLayout = () => {
 
   useEffect(() => {
     if (aToken) {
-      console.log("Auth Log ",aToken);
-
       navigate("/admin"); // Redirect authenticated users to a protected route
     }
   }, [aToken, navigate]);

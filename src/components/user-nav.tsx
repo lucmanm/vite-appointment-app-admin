@@ -14,8 +14,25 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
+import { useAdminContext } from "@/hook/userAdminContext";
+
+type UserNavType = "logout" | "profile" | "settings";
 
 export function UserNav() {
+  const navigate = useNavigate();
+  const { setaToken} = useAdminContext()
+
+  const onclick = (data: UserNavType) => {
+    if (data === "logout") {
+      localStorage.removeItem("aToken");
+      setaToken("")
+      console.log("Success");
+
+      navigate("/login");
+    }
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -59,7 +76,7 @@ export function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onclick("logout")}>
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
           <DropdownMenuShortcut>⇧Q</DropdownMenuShortcut>
