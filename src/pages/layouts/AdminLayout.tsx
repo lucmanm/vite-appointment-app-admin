@@ -12,8 +12,7 @@ const AdminLayout = () => {
 
   useEffect(() => {
     if (!aToken) {
-      console.log(aToken);
-
+      console.log("Admin Log ",aToken);
       navigate("/login");
     }
   }, [aToken, navigate]);
